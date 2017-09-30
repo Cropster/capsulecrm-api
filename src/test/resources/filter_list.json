@@ -1,0 +1,16 @@
+{
+  "filter": {
+    "conditions": [
+      {
+        "field": "tag",
+        "operator": "is",
+        "value": "YourTag"
+      },
+      {
+        "field": "type",
+        "operator": "is",
+        "value": "organisation"
+      }
+    ]
+  }
+}

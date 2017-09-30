@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "id": 1,
+      "name": "TAG1",
+      "description": "A tag",
+      "dataTag": false
+    },
+    {
+      "id": 2,
+      "name": "TAG2",
+      "description": "A second tag",
+      "dataTag": true
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "definitions": [
+    {
+      "id": 1,
+      "type": "list",
+      "description": "Primary language of contact",
+      "displayOrder": 2,
+      "name": "Language",
+      "captureRule": null,
+      "tag": null,
+      "options": [
+        "DE",
+        "EN",
+        "ES",
+        "JP",
+        "KR",
+        "other"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "date",
+      "description": "Account creation date",
+      "displayOrder": 5,
+      "name": "Start Date",
+      "captureRule": "organisation",
+      "tag": {
+        "id": 4,
+        "name": "ProductAccount",
+        "dataTag": true
+      }
+    }
+  ]
+}

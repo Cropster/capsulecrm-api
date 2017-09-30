@@ -1,0 +1,101 @@
+{
+  "parties": [
+    {
+      "id": 11587,
+      "type": "person",
+      "about": "testing testing",
+      "title": null,
+      "firstName": "Scott",
+      "lastName": "Spacey",
+      "jobTitle": "Creative Director",
+      "createdAt": "2015-09-15T10:43:23Z",
+      "updatedAt": "2015-09-15T10:43:23Z",
+      "organisation": null,
+      "lastContactedAt": null,
+      "addresses": [
+        {
+          "id": 12135,
+          "type": null,
+          "city": "Chicago",
+          "country": "United States",
+          "street": "847 North Rush Street",
+          "state": "IL",
+          "zip": "65629"
+        }
+      ],
+      "phoneNumbers": [
+        {
+          "id": 12133,
+          "type": null,
+          "number": "773-338-7786"
+        }
+      ],
+      "websites": [],
+      "emailAddresses": [
+        {
+          "id": 12134,
+          "type": "Work",
+          "address": "scott@homestyleshop.co"
+        }
+      ],
+      "pictureURL": "https://capsulecrm.com/theme/default/images/person_avatar_70.png"
+    },
+    {
+      "id": 123,
+      "owner": null,
+      "type": "organisation",
+      "about": null,
+      "name": "Coffee Roaster",
+      "createdAt": null,
+      "updatedAt": null,
+      "lastContactedAt": null,
+      "pictureURL": null,
+      "phoneNumbers": [],
+      "addresses": [],
+      "emailAddresses": [],
+      "websites": []
+    },
+    {
+      "id": 111,
+      "type": "organisation",
+      "tags": [
+        {
+          "id": 555,
+          "name": "tag1",
+          "dataTag": false
+        },
+        {
+          "id": 666,
+          "name": "tag2",
+          "dataTag": true
+        }
+      ],
+      "fields": [
+        {
+          "id": 1111,
+          "definition": {
+            "id": 777,
+            "name": "StringField"
+          },
+          "value": "Partner"
+        },
+        {
+          "id": 666,
+          "definition": {
+            "id": 222,
+            "name": "BoolField"
+          },
+          "value": true
+        },
+        {
+          "id": 777,
+          "definition": {
+            "id": 111,
+            "name": "DateField"
+          },
+          "value": "2017-02-28"
+        }
+      ]
+    }
+  ]
+}

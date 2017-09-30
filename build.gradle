@@ -1,0 +1,81 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+    }
+}
+
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.10'
+    id 'io.spring.dependency-management' version '1.0.1.RELEASE'
+    id 'java'
+}
+
+
+group 'com.cropster'
+version '0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'maven-publish'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext.junitJupiterVersion = '5.0.0'
+ext.junitPlatformVersion = '1.0.0'
+ext.jacksonVersion = '2.9.1'
+
+dependencyManagement {
+    imports {
+        mavenBom "com.fasterxml.jackson:jackson-bom:${jacksonVersion}"
+    }
+}
+
+dependencies {
+    compile('org.apache.commons:commons-lang3:3.4')
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+
+    compile 'com.fasterxml.jackson.core:jackson-databind'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // junit 5, such wow
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+
+    // assertThat(hasAssertionLibrary())
+    testCompile 'org.assertj:assertj-core:3.8.0'
+
+    // testing sanity
+    testCompile 'commons-io:commons-io:+'
+    testCompile 'org.skyscreamer:jsonassert:1.5.0'
+
+    // test the http!
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.9.0'
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.compilerArgs += '-parameters'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

@@ -1,0 +1,41 @@
+# Deployment scripts
+/*.sh
+
+# Editor backup files
+*~
+
+# Gradle
+/.gradle/
+/build/
+gradle.properties
+
+# Maven
+/target/
+
+# Eclipse
+/bin/
+/.settings/
+/.externalToolBuilders/
+/.project
+/.classpath
+/.springBeans
+
+# IntelliJ Idea
+.idea
+*.iws
+*.ipr
+*.iml
+*.releaseBackup
+
+# Netbeans
+nbactions.xml
+nb-configuration.xml
+/target
+
+.env
+!.env.sample
+
+
+settings.gradle
+out/
+
