@@ -4,6 +4,8 @@ import static com.cropster.capsulecrm.client.Logger.Level.NONE;
 
 import java.util.concurrent.Executor;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -156,6 +158,10 @@ public class CapsuleClient
 
         public Builder endpoint(String endpoint)
         {
+            if (!StringUtils.endsWith(endpoint, "/"))
+            {
+                throw new IllegalArgumentException("endpoint url must end in /");
+            }
             this.endpoint = endpoint;
             return this;
         }

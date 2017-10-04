@@ -39,7 +39,7 @@ interface ServiceParty
             @QueryMap Map<String, String> query);
 
     @PUT("parties/{partyId}")
-    Flowable<Response<Party>> update(@Path("partyId") Long partyId, @Body Party party);
+    Flowable<Response<Party>> update(@Path("partyId") Long partyId, @Body Party party, @QueryMap Map<String, String> query);
 
     @GET("parties/fields/definitions")
     Flowable<Response<CustomFieldDefinition.CustomFieldDefinitionList>> definitions(

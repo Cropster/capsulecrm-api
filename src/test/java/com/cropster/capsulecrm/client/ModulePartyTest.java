@@ -159,7 +159,7 @@ public class ModulePartyTest extends BaseTest
         assertThat(party).isEqualTo(expectedResponse);
 
         RecordedRequest request = server.takeRequest();
-        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587");
+        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587?embed=tags,fields");
         assertThat(request.getHeader("Authorization")).isNotNull();
 
         Party serializedPayload = readParty(request);
@@ -189,7 +189,7 @@ public class ModulePartyTest extends BaseTest
         assertThat(responseParty).isEqualTo(expectedResponse);
 
         RecordedRequest request = server.takeRequest();
-        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587");
+        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587?embed=tags,fields");
         assertThat(request.getHeader("Authorization")).isNotNull();
 
         Party expectedRequestBody = Party.builder()
@@ -220,7 +220,7 @@ public class ModulePartyTest extends BaseTest
         assertThat(responseParty).isEqualTo(expectedResponse);
 
         RecordedRequest request = server.takeRequest();
-        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587");
+        assertThat(request.getPath()).isEqualTo("/api/v2/parties/11587?embed=tags,fields");
         assertThat(request.getHeader("Authorization")).isNotNull();
 
         Party expectedRequestBody = Party.builder()

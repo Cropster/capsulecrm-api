@@ -96,7 +96,7 @@ public class ModulePartyImpl extends AbstractModule<ServiceParty> implements Mod
     {
         Utils.validateNonNull(party.getId(), "To update a party it must already exist");
         return Optional.ofNullable(
-                service.update(party.getId(), party)
+                service.update(party.getId(), party, defaultPartyParams())
                         .blockingFirst()
                         .body());
     }
