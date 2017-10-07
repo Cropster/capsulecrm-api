@@ -13,14 +13,21 @@ plugins {
     id 'java'
 }
 
+repositories {
+  maven {
+    name 'cropster-nexus'
+    url 'https://nexus.cropster.xyz/repository/cropster'
+  }
+}
 
 group 'com.cropster'
-version '0.1-SNAPSHOT'
+version '0.1'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 
@@ -73,9 +80,22 @@ compileTestJava {
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://nexus.cropster.xyz/repository/cropster") {
+                authentication(userName: cropsterNexusUser, password: cropsterNexusPassword)
+            }
+            snapshotRepository(url: "https://nexus.cropster.xyz/repository/cropster-snapshots") {
+                authentication(userName: cropsterNexusUser, password: cropsterNexusPassword)
+            }
         }
     }
 }

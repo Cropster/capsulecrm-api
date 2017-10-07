@@ -17,26 +17,28 @@ we will add them to this library. We welcome PRs filling in new features.
 
 ## Setup
 
+> **Note:** This artifact isn't published to the public Maven repo yet.
+> Interested in using it? Please contact us by opening an issue.
+
 Grab via Maven:
 ```xml
 <dependency>
   <groupId>com.cropster</groupId>
   <artifactId>capsulecrm-api</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
 </dependency>
 ```
 
 or Gradle:
 
-```groovy
-compile 'com.cropster:capsulecrm-api:0.1-SNAPSHOT'
+```gradle
+compile 'com.cropster:capsulecrm-api:0.1'
 ```
 
 ### Requirements
 
 * Java 8
 * Capsule CRM API Credentials
-
 
 The SDK uses [Retrofit 2][2] under the hood as a REST client, which uses OkHttp as the underlying http client.
 
