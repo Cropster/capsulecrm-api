@@ -2,6 +2,8 @@
   "parties": [
     {
       "id": 11587,
+      "owner": null,
+      "team": null,
       "type": "person",
       "about": "testing testing",
       "title": null,
@@ -43,6 +45,7 @@
     {
       "id": 123,
       "owner": null,
+      "team": null,
       "type": "organisation",
       "about": null,
       "name": "Coffee Roaster",

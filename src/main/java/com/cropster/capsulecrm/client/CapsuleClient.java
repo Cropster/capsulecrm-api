@@ -1,6 +1,10 @@
 package com.cropster.capsulecrm.client;
 
 import static com.cropster.capsulecrm.client.Logger.Level.NONE;
+import static com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY;
+import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
+import static com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_ROOT_VALUE;
+import static com.fasterxml.jackson.databind.SerializationFeature.WRAP_ROOT_VALUE;
 
 import java.util.concurrent.Executor;
 
@@ -128,9 +132,12 @@ public class CapsuleClient
         public static ObjectMapper defaultObjectMapper()
         {
             ObjectMapper mapper = new ObjectMapper();
-            mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-            mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
-            mapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+            mapper.enable(ACCEPT_SINGLE_VALUE_AS_ARRAY);
+            mapper.enable(UNWRAP_ROOT_VALUE);
+            mapper.enable(WRAP_ROOT_VALUE);
+            // ObjectMapper does NOT ignore unknown properties by default
+            // We thus configure it with the FAIL_ON_UNKNOWN_PROPERTIES feature set to false
+            mapper.configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
             mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
             mapper.findAndRegisterModules();
             return mapper;

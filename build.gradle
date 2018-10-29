@@ -16,12 +16,12 @@ plugins {
 repositories {
   maven {
     name 'cropster-nexus'
-    url 'https://nexus.cropster.xyz/repository/cropster'
+    url 'https://nexus.cropster.cc/repository/cropster'
   }
 }
 
 group 'com.cropster'
-version '0.1'
+version '0.2'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -90,11 +90,11 @@ publishing {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "https://nexus.cropster.xyz/repository/cropster") {
-                authentication(userName: cropsterNexusUser, password: cropsterNexusPassword)
+            repository(url: "https://nexus.cropster.cc/repository/cropster") {
+                authentication(userName: nexusUser, password: nexusPass)
             }
-            snapshotRepository(url: "https://nexus.cropster.xyz/repository/cropster-snapshots") {
-                authentication(userName: cropsterNexusUser, password: cropsterNexusPassword)
+            snapshotRepository(url: "https://nexus.cropster.cc/repository/cropster-snapshots") {
+                authentication(userName: nexusUser, password: nexusPass)
             }
         }
     }

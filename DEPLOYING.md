@@ -3,8 +3,8 @@
 Create  `~/.gradle/gradle.properties`
 
 ```
-cropsterNexusUser=
-cropsterNexusPass=
+nexusUser=
+nexusPass=
 ```
 
 # Build
